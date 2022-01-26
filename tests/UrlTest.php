@@ -7,7 +7,6 @@ use Ood\Url;
 
 class UrlTest extends TestCase
 {
-
     public function testUrl(): void
     {
         $url = new Url('http://yandex.ru:80?key=value&key2=value2');
@@ -29,7 +28,7 @@ class UrlTest extends TestCase
 
         $actual = $url->getQueryParam('new', 'ehu');
         $this->assertEquals('ehu', $actual);
-        
+
         $actual = $url->getQueryParam('new');
         $this->assertEquals(null, $actual);
 

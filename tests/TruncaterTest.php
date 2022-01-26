@@ -7,7 +7,6 @@ use Ood\Truncater;
 
 class TruncaterTest extends TestCase
 {
-
     public function testTruncate(): void
     {
         $truncater = new Truncater();
@@ -31,7 +30,7 @@ class TruncaterTest extends TestCase
 
         $actual = $truncater->truncate('one two', ['separator' => '!']);
         $this->assertEquals('one!', $actual);
-        
+
         $actual = $truncater->truncate('one two');
         $this->assertEquals('one...', $actual);
     }

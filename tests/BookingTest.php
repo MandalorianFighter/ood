@@ -7,7 +7,6 @@ use Ood\Booking;
 
 class BookingTest extends TestCase
 {
-
     public function testBooking(): void
     {
         $booking = new Booking();

@@ -7,7 +7,6 @@ use Ood\Validator;
 
 class ValidatorTest extends TestCase
 {
-
     public function testValidateWithDefaultOptions(): void
     {
         $validator = new Validator();
@@ -33,7 +32,7 @@ class ValidatorTest extends TestCase
         ]);
         $errors1 = $validator->validate('qwertya3sdf');
         $this->assertEmpty($errors1);
- 
+
         $errors2 = $validator->validate('qwerty');
         $this->assertEquals([
             'minLength' => 'too small'
