@@ -3,15 +3,14 @@
 namespace Ood\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Ood\PasswordValidator;
-
+use Ood\Validator;
 
 class ValidatorTest extends TestCase
 {
 
     public function testValidateWithDefaultOptions(): void
     {
-        $validator = new PasswordValidator();
+        $validator = new Validator();
 
         $errors1 = $validator->validate('qwertyui');
 
@@ -20,7 +19,7 @@ class ValidatorTest extends TestCase
 
     public function testValidateWithOptions(): void
     {
-        $validator = new PasswordValidator([
+        $validator = new Validator([
             'containNumbers' => true
         ]);
         $errors1 = $validator->validate('qwertya3sdf');
@@ -29,7 +28,7 @@ class ValidatorTest extends TestCase
 
     public function testValidateWithIncorrectOptions(): void
     {
-        $validator = new PasswordValidator([
+        $validator = new Validator([
             'containNumberz' => null
         ]);
         $errors1 = $validator->validate('qwertya3sdf');

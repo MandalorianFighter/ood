@@ -2,31 +2,41 @@
 
 namespace Ood;
 
-class PasswordValidator
+class Validator
 {
     public const PARAMS = ['minLength' => 8, 'containNumbers' => false];
-    public $params = [];
+    /**
+     * @var array<string,mixed> Ood\Url::$params
+     */
+    public array $params = [];
 
-    public function __construct($params = [])
+    /**
+     * @param array<string,mixed> $params
+     */
+    public function __construct(array $params = [])
     {
         $this->params = array_merge(self::PARAMS, $params);
     }
 
-    private function hasNumber($pass) 
+    private function hasNumber(string $pass): bool
     {
         return strpbrk($pass, '1234567890') !== false;
     }
 
-    public function validate($pass)
+    /**
+     * @return array<string,mixed>
+     */
+
+    public function validate(string $pass): array
     {
         $length = mb_strlen($pass);
 
         $params = [];
         if ($length < $this->params['minLength']) {
             $params['minLength'] = 'too small';
-        } 
+        }
         if ($this->params['containNumbers'] === true) {
-           if ($this->hasNumber($pass) === false) {
+            if ($this->hasNumber($pass) === false) {
                 $params['containNumbers'] = 'should contain at least one number';
             }
         }

@@ -5,7 +5,14 @@
             "Mandalorian\\Ood\\": "src/"
         },
 	"files": [
-            "src/Validator.php"
+            "src/Validator.php",
+	    "src/Truncater.php",
+	    "src/Comparator.php",
+	    "src/DeckOfCards.php",
+	    "src/Url.php",
+	    "src/Normalizer.php",
+	    "src/Booking.php",
+	    "src/Stringer.php"
         ]
     },
     "authors": [
@@ -15,6 +22,14 @@
         }
     ],
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.4"
+    },
+    "require": {
+         "tightenco/collect": "^8.80",
+        "php-ds/php-ds": "^1.4",
+        "nesbot/carbon": "^2.56",
+        "symfony/string": "^6.0",
+        "friendsofphp/php-cs-fixer": "^3.5"
     }
 }
